@@ -1,6 +1,6 @@
 {
   "name": "pwa-webpack-plugin",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Webpack plugin to make js apps pwa with ease",
   "main": "lib/index.js",
   "scripts": {
