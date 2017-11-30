@@ -27,7 +27,7 @@ class PWAWebpackPlugin {
       theme_color: '#000000',
       icons: {
         android: true,
-        appleIcon: false,
+        appleIcon: true,
         appleStartup: false,
         coast: false,
         favicons: true,
@@ -138,6 +138,13 @@ class PWAWebpackPlugin {
             this.faviconResultHtml = html.map(h => {
               if (h.indexOf('manifest.json') !== -1) {
                 return h.replace(iconAssetsPath, '');
+              }
+              // Change apple status bar style emitted from favicons
+              // <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+              // to
+              // <meta name='apple-mobile-web-app-status-bar-style' content='default'>
+              if (h.indexOf('black-translucent') !== -1) {
+                return h.replace('black-translucent', 'default');
               }
               return h;
             });
