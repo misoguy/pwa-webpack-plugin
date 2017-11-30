@@ -1,4 +1,4 @@
-const workerRegistrationBuilder = (publicPath: string = '') => `(function() {
+const workerRegistrationBuilder = (publicPath: string = '/') => `(function() {
   'use strict';
 
   // Check to make sure service workers are supported in the current browser,

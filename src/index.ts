@@ -25,6 +25,7 @@ class PWAWebpackPlugin {
       appDescription: 'PWA App made with pwa-webpack-plugin',
       background: '#ffffff',
       theme_color: '#000000',
+      start_url: '/',
       icons: {
         android: true,
         appleIcon: true,
@@ -119,7 +120,22 @@ class PWAWebpackPlugin {
       navigateFallback: this.outputPublicPath + 'index.html',
     };
 
-    this.pluginOptions = { ...this.pluginOptions, ...this.userOptions };
+    this.pluginOptions = {
+      ...this.pluginOptions,
+      ...this.userOptions,
+      faviconConfig: {
+        ...this.pluginOptions.faviconConfig,
+        ...this.userOptions.faviconConfig,
+        icons: {
+          ...this.pluginOptions.faviconConfig.icons,
+          ...this.userOptions.faviconConfig.icons,
+        },
+      },
+      serviceWorkerConfig: {
+        ...this.pluginOptions.serviceWorkerConfig,
+        ...this.userOptions.serviceWorkerConfig,
+      },
+    };
   }
 
   private makeFavicon(compiler: any, iconAssetsPath: string = '/icons') {
