@@ -1,19 +1,56 @@
 {
   "name": "pwa-webpack-plugin",
+  "description": "Webpack plugin to make pwa js apps with ease",
   "version": "0.0.1",
-  "description": "Webpack plugin to make js apps pwa with ease",
+  "author": "misoguy1985@gmail.com",
+  "license": "MIT",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/misoguy/pwa-webpack-plugin.git"
   },
-  "author": "misoguy1985@gmail.com",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/misoguy/pwa-webpack-plugin/issues"
   },
-  "homepage": "https://github.com/misoguy/pwa-webpack-plugin#readme"
+  "homepage": "https://github.com/misoguy/pwa-webpack-plugin#readme",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "pwa",
+    "manifest",
+    "service-worker",
+    "favicons",
+    "sw-precache"
+  ],
+  "tags": [
+    "webpack",
+    "plugin",
+    "pwa",
+    "manifest",
+    "service-worker",
+    "favicons",
+    "sw-precache"
+  ],
+  "scripts": {
+    "watch": "tsc -w",
+    "lint": "tslint -p .",
+    "build": "yarn run lint && tsc",
+    "patch": "npm version patch",
+    "minor": "npm version minor",
+    "major": "npm version major",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.53",
+    "ts-loader": "^3.1.1",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "favicons": "^4.8.6",
+    "sw-precache": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  }
 }

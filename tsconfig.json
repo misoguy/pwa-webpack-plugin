@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "lib",
+    "target": "es5",
+    "lib": ["es2015.promise", "es5"],
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "sourceMap": true
+  },
+  "include": ["types/**/*.ts", "src/**/*"]
+}
